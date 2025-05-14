@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "408482196731",
+    "project_id": "adhtp-general-analysis",
+    "storage_bucket": "adhtp-general-analysis.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408482196731:android:050df79279be3f7576545e",
+        "android_client_info": {
+          "package_name": "com.example.adhtp_general_analysis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIPapbCrI2eDlaDv9L3ddE_PDptDPoeJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
