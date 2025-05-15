@@ -1,6 +1,6 @@
 import 'package:adhtp_general_analysis/page/about.dart';
 import 'package:adhtp_general_analysis/page/ai_assistant.dart';
-import 'package:adhtp_general_analysis/page/main_questionare.dart';
+import 'package:adhtp_general_analysis/page/main_page.dart';
 import 'package:adhtp_general_analysis/page/history.dart';
 import 'package:flutter/material.dart';
 import 'package:animations/animations.dart';
@@ -17,7 +17,7 @@ class _NavigatorServicesState extends State<NavigatorServices>
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   var _selectedIndex = 0;
   final List<Widget> _windgetOption = <Widget>[
-    MainQuestionare(),
+    MainPage(),
     HistoryResults(),
     AiAssistant(),
     AboutPage(),
@@ -42,10 +42,17 @@ class _NavigatorServicesState extends State<NavigatorServices>
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(title: const Text("ADHTP General Analysis")),
+      backgroundColor: Theme.of(context).colorScheme.surfaceContainerLowest,
+      appBar: AppBar(
+        title: const Text("ADHTP General Analysis"),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        scrolledUnderElevation: 0,
+      ),
       bottomNavigationBar:
           MediaQuery.of(context).size.width <= 590
               ? NavigationBar(
+                backgroundColor: Colors.transparent,
                 onDestinationSelected:
                     (i) => setState(() => _selectedIndex = i),
                 selectedIndex: _selectedIndex,
@@ -61,9 +68,9 @@ class _NavigatorServicesState extends State<NavigatorServices>
                     label: 'History',
                   ),
                   NavigationDestination(
-                    icon: Icon(Icons.search_outlined),
-                    selectedIcon: Icon(Icons.search_rounded),
-                    label: 'Search',
+                    icon: Icon(Icons.lightbulb_outline_rounded),
+                    selectedIcon: Icon(Icons.lightbulb_rounded),
+                    label: 'Deep Insight',
                   ),
                   NavigationDestination(
                     icon: Icon(Icons.info_outline_rounded),
@@ -79,6 +86,7 @@ class _NavigatorServicesState extends State<NavigatorServices>
           if (MediaQuery.of(context).size.width > 590 &&
               MediaQuery.of(context).size.width <= 810)
             NavigationRail(
+              backgroundColor: Colors.transparent,
               selectedIndex: _selectedIndex,
               groupAlignment: 0,
               onDestinationSelected: (int index) {
@@ -94,14 +102,14 @@ class _NavigatorServicesState extends State<NavigatorServices>
                   label: Text('Home'),
                 ),
                 NavigationRailDestination(
-                  icon: Icon(Icons.inventory_2_outlined),
-                  selectedIcon: Icon(Icons.inventory_2_rounded),
-                  label: Text('My Parcel'),
+                  icon: Icon(Icons.history_outlined),
+                  selectedIcon: Icon(Icons.history_rounded),
+                  label: Text('History'),
                 ),
                 NavigationRailDestination(
-                  icon: Icon(Icons.search_outlined),
-                  selectedIcon: Icon(Icons.search_rounded),
-                  label: Text('Search'),
+                  icon: Icon(Icons.lightbulb_outline_rounded),
+                  selectedIcon: Icon(Icons.lightbulb_rounded),
+                  label: Text('Deep Insight'),
                 ),
                 NavigationRailDestination(
                   icon: Icon(Icons.info_outline_rounded),
@@ -112,7 +120,7 @@ class _NavigatorServicesState extends State<NavigatorServices>
             ),
           if (MediaQuery.of(context).size.width > 810)
             NavigationDrawer(
-              backgroundColor: Theme.of(context).colorScheme.surface,
+              backgroundColor: Colors.transparent,
               onDestinationSelected: (i) => setState(() => _selectedIndex = i),
               selectedIndex: _selectedIndex,
               children: const <Widget>[
@@ -123,14 +131,14 @@ class _NavigatorServicesState extends State<NavigatorServices>
                   selectedIcon: Icon(Icons.home_rounded),
                 ),
                 NavigationDrawerDestination(
-                  label: Text('My Parcel'),
-                  icon: Icon(Icons.inventory_2_outlined),
-                  selectedIcon: Icon(Icons.inventory_2_rounded),
+                  label: Text('History'),
+                  icon: Icon(Icons.history_outlined),
+                  selectedIcon: Icon(Icons.history_rounded),
                 ),
                 NavigationDrawerDestination(
-                  label: Text('Search'),
-                  icon: Icon(Icons.search_outlined),
-                  selectedIcon: Icon(Icons.search_rounded),
+                  label: Text('Deep Insight'),
+                  icon: Icon(Icons.lightbulb_outline_rounded),
+                  selectedIcon: Icon(Icons.lightbulb_rounded),
                 ),
                 NavigationDrawerDestination(
                   label: Text('About'),
