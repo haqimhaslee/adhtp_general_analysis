@@ -1,8 +1,6 @@
-// adhtp_vertex_ai.dart (or inside your page file)
-import 'dart:typed_data';
 import 'package:firebase_vertexai/firebase_vertexai.dart';
+import 'package:flutter/foundation.dart';
 
-// Your existing system instruction string (siText1) ...
 const String siText1 = '''
 **SYSTEM INSTRUCTION**
 
@@ -146,18 +144,9 @@ Future<String?> generateHtpAnalysisFromImage(
     systemInstruction: systemInstruction,
   );
 
-  // --- THIS IS THE CORRECTED PART ---
-  // Prepare the content for the model.
-  // The model.generateContent method expects an Iterable<Content>.
-  // For a single user turn with multiple parts (image and text),
-  // you create one Content object with 'user' role and a list of parts.
   final content = [
     Content('user', [
-      // Use InlineDataPart for Uint8List image data
-      InlineDataPart(
-        'image/jpeg',
-        imageBytes,
-      ), // Assuming JPEG, adjust if other formats are common
+      InlineDataPart('image/jpeg', imageBytes),
       TextPart(userPrompt),
     ]),
   ];
@@ -165,10 +154,14 @@ Future<String?> generateHtpAnalysisFromImage(
 
   try {
     final response = await model.generateContent(content);
-    print('Vertex AI Response: ${response.text}');
+    if (kDebugMode) {
+      print('Vertex AI Response: ${response.text}');
+    }
     return response.text;
   } catch (e) {
-    print('Error generating content: $e');
+    if (kDebugMode) {
+      print('Error generating content: $e');
+    }
     return 'Error: Could not get analysis from AI. Details: $e';
   }
 }

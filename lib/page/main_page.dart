@@ -16,159 +16,166 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: ListView(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(25),
-                    child: Material(
-                      color: Theme.of(context).colorScheme.surfaceContainerHigh,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder:
-                                  (context) => const AdhtpGeneralAnalysis(),
-                            ),
-                          );
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    const SizedBox(height: 5.0),
-                                    Text(
-                                      'ADHTP General Analysis',
-                                      style: TextStyle(
-                                        color:
-                                            Theme.of(
-                                              context,
-                                            ).colorScheme.primary,
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.w700,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 750),
+          child: ListView(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(25),
+                      child: Material(
+                        color:
+                            Theme.of(context).colorScheme.surfaceContainerHigh,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                    (context) => const AdhtpGeneralAnalysis(),
+                              ),
+                            );
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      const SizedBox(height: 5.0),
+                                      Text(
+                                        'ADHTP General Analysis',
+                                        style: TextStyle(
+                                          color:
+                                              Theme.of(
+                                                context,
+                                              ).colorScheme.primary,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w700,
+                                        ),
                                       ),
-                                    ),
-                                    const SizedBox(height: 15.0),
-                                    Text(
-                                      'General analysis related to ADHTP and offers overview and general insights based on certain parameters using Gemini AI',
-                                      style: TextStyle(
-                                        color:
-                                            Theme.of(
-                                              context,
-                                            ).colorScheme.secondary,
+                                      const SizedBox(height: 15.0),
+                                      Text(
+                                        'General analysis related to ADHTP and offers overview and general insights based on certain parameters using Gemini AI',
+                                        style: TextStyle(
+                                          color:
+                                              Theme.of(
+                                                context,
+                                              ).colorScheme.onSurface,
 
-                                        fontSize: 15.0,
-                                        fontWeight: FontWeight.w100,
+                                          fontSize: 15.0,
+                                          //fontWeight: FontWeight.w400,
+                                        ),
                                       ),
-                                    ),
-                                    const SizedBox(height: 5.0),
-                                  ],
+                                      const SizedBox(height: 5.0),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              SizedBox(width: 20),
-                              Container(
-                                width: 100.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(
-                                  color: const Color(
-                                    0xFF388E3C,
-                                  ).withOpacity(0.7),
-                                  borderRadius: BorderRadius.circular(40.0),
+                                SizedBox(width: 20),
+                                Container(
+                                  width: 100.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(
+                                    color: const Color(
+                                      0xFF388E3C,
+                                    ).withOpacity(0.7),
+                                    borderRadius: BorderRadius.circular(40.0),
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(25),
-                    child: Material(
-                      color: Theme.of(context).colorScheme.surfaceContainerHigh,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Dass21(),
-                            ),
-                          );
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    const SizedBox(height: 5.0),
-                                    Text(
-                                      'DASS 21',
-                                      style: TextStyle(
-                                        color:
-                                            Theme.of(
-                                              context,
-                                            ).colorScheme.primary,
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.w700,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(25),
+                      child: Material(
+                        color:
+                            Theme.of(context).colorScheme.surfaceContainerHigh,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Dass21(),
+                              ),
+                            );
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      const SizedBox(height: 5.0),
+                                      Text(
+                                        'DASS 21',
+                                        style: TextStyle(
+                                          color:
+                                              Theme.of(
+                                                context,
+                                              ).colorScheme.primary,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w700,
+                                        ),
                                       ),
-                                    ),
-                                    const SizedBox(height: 15.0),
-                                    Text(
-                                      'Standard tool used to measure the severity of a range of emotional states and generate insights using Gemini AI',
-                                      style: TextStyle(
-                                        color:
-                                            Theme.of(
-                                              context,
-                                            ).colorScheme.secondary,
+                                      const SizedBox(height: 15.0),
+                                      Text(
+                                        'Standard tool used to measure the severity of a range of emotional states and generate insights using Gemini AI',
+                                        style: TextStyle(
+                                          color:
+                                              Theme.of(
+                                                context,
+                                              ).colorScheme.onSurface,
 
-                                        fontSize: 15.0,
-                                        fontWeight: FontWeight.w100,
+                                          fontSize: 15.0,
+                                          //fontWeight: FontWeight.w400,
+                                        ),
                                       ),
-                                    ),
-                                    const SizedBox(height: 5.0),
-                                  ],
+                                      const SizedBox(height: 5.0),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              SizedBox(width: 20),
-                              Container(
-                                width: 100.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(
-                                  color: const Color(
-                                    0xFF388E3C,
-                                  ).withOpacity(0.7),
-                                  borderRadius: BorderRadius.circular(40.0),
+                                SizedBox(width: 20),
+                                Container(
+                                  width: 100.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(
+                                    color: const Color(
+                                      0xFF388E3C,
+                                    ).withOpacity(0.7),
+                                    borderRadius: BorderRadius.circular(40.0),
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

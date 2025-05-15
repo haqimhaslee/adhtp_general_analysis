@@ -1,5 +1,5 @@
 import 'package:adhtp_general_analysis/page/about.dart';
-import 'package:adhtp_general_analysis/page/ai_assistant.dart';
+import 'package:adhtp_general_analysis/page/deep_insight.dart';
 import 'package:adhtp_general_analysis/page/main_page.dart';
 import 'package:adhtp_general_analysis/page/history.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class _NavigatorServicesState extends State<NavigatorServices>
   final List<Widget> _windgetOption = <Widget>[
     MainPage(),
     HistoryResults(),
-    AiAssistant(),
+    DeepInsight(),
     AboutPage(),
   ];
 
@@ -42,17 +42,16 @@ class _NavigatorServicesState extends State<NavigatorServices>
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surfaceContainerLowest,
+      //backgroundColor: Theme.of(context).colorScheme.surfaceContainerLowest,
       appBar: AppBar(
         title: const Text("ADHTP General Analysis"),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        scrolledUnderElevation: 0,
+
+        //backgroundColor: Colors.transparent,
       ),
       bottomNavigationBar:
           MediaQuery.of(context).size.width <= 590
               ? NavigationBar(
-                backgroundColor: Colors.transparent,
+                //backgroundColor: Colors.transparent,
                 onDestinationSelected:
                     (i) => setState(() => _selectedIndex = i),
                 selectedIndex: _selectedIndex,
@@ -86,7 +85,7 @@ class _NavigatorServicesState extends State<NavigatorServices>
           if (MediaQuery.of(context).size.width > 590 &&
               MediaQuery.of(context).size.width <= 810)
             NavigationRail(
-              backgroundColor: Colors.transparent,
+              //backgroundColor: Colors.transparent,
               selectedIndex: _selectedIndex,
               groupAlignment: 0,
               onDestinationSelected: (int index) {
@@ -120,7 +119,7 @@ class _NavigatorServicesState extends State<NavigatorServices>
             ),
           if (MediaQuery.of(context).size.width > 810)
             NavigationDrawer(
-              backgroundColor: Colors.transparent,
+              //backgroundColor: Colors.transparent,
               onDestinationSelected: (i) => setState(() => _selectedIndex = i),
               selectedIndex: _selectedIndex,
               children: const <Widget>[
